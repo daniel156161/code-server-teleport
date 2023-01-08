@@ -18,7 +18,7 @@ RUN export VERSION_CODENAME=jammy && echo "deb [signed-by=/usr/share/keyrings/te
   https://apt.releases.teleport.dev/ubuntu ${VERSION_CODENAME?} stable/v11" \
   | tee /etc/apt/sources.list.d/teleport.list > /dev/null
 
-RUN apt-get update && apt-get install -y git wget python3 sudo teleport openssh-server
+RUN apt-get update && apt-get install -y git wget python3 python3-pip sudo teleport openssh-server
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 10
 
 EXPOSE 22
