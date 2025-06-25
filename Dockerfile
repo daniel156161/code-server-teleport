@@ -15,7 +15,7 @@ RUN curl https://apt.releases.teleport.dev/gpg \
   -o /usr/share/keyrings/teleport-archive-keyring.asc
 
 RUN export VERSION_CODENAME=jammy && echo "deb [signed-by=/usr/share/keyrings/teleport-archive-keyring.asc] \
-  https://apt.releases.teleport.dev/ubuntu ${VERSION_CODENAME?} stable/v16" \
+  https://apt.releases.teleport.dev/ubuntu ${VERSION_CODENAME?} stable/v17" \
   | tee /etc/apt/sources.list.d/teleport.list > /dev/null
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y git wget python3 python3-pip sudo teleport openssh-server
